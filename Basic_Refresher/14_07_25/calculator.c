@@ -4,7 +4,8 @@ int main()
 {
 	int ch;
 	int x,y;
-
+	while(1)
+	{
 	printf("Operations numbers : \n");
 	printf("1. Addition\n");
 	printf("2. Subtraction\n");
@@ -12,7 +13,7 @@ int main()
 	printf("4. Division\n");
 
 	scanf("%d",&ch);
-
+	
 	printf("Enter two Numbers\n");
 	scanf("%d %d",&x,&y);
 
@@ -33,5 +34,6 @@ int main()
 		default :
 			printf("Invalid Input\n");
 			break;
+	}
 	}
 }

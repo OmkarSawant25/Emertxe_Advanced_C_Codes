@@ -11,15 +11,40 @@ int main()
     
     if(num<0)
     {
-        printf("Please enter a positive integer\n");
+        printf("Please enter a positive integer");
     }
     else
     {
-        for (; num != 0 ; num = num / 10)
+        while(num != 0)
         {
             rem = num % 10;
             result = result * 10 + rem;
+            num = num/10;
         }
-        printf("Reversed number is %d\n",result);
+        printf("Reversed number is %d",result);
     }
 }
+
+
+
+
+
+
+   
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
