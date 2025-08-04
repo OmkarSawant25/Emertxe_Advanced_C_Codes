@@ -2,28 +2,31 @@
 
 int main()
 {
-	int num1 = 0;
-	int num2 = 1;
-	int sum = 0;
-	int n;
+    int num1 = 0;
+    int num2 = 1;
+    int sum = 0;
+    int n;
 
-	printf("Enter a number: ");
-	scanf("%d",&n);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-	if(n>=0){
-		while(num1<=n){
-			printf("%d ",num1);
-			sum = num1 + num2;
-			num1 = num2;
-			num2 = sum;
-		}
-	}
-	else{
-		printf("Invalid input\n");
-	}
+    if (n >= 0)
+    {
+        while (num1 <= n)
+        {
+            printf("%d ", num1);
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+        }
+    }
+    else
+    {
+        printf("Invalid input\n");
+    }
 }
 
-/* 
+/*
 Name : Omkar Ashok Sawant
 Date : 22/07/2025
 Description : Generate positive Fibonacci sequence upto given number.
@@ -38,7 +41,7 @@ int main()
     int firstterm = 0, secondterm = 1, sum,n;
     //printf("Enter a number: ");
     scanf("%d",&n);
-    
+
     if(n >= 0)                                      //Validating
     {
         while(firstterm <= n)                       //checking condition of first term

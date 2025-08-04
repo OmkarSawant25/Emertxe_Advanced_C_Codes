@@ -4,15 +4,15 @@ int main()
 {
 	int x;
 	printf("Enter the number :\n");
-	scanf("%d",&x);
+	scanf("%d", &x);
 
-	if(x == 0)
+	if (x == 0)
 	{
 		printf("Neither Even nor Odd\n");
 	}
-	else if(x>0)
+	else if (x > 0)
 	{
-		if(x%2 == 0)
+		if (x % 2 == 0)
 		{
 			printf("Positive even number\n");
 		}
@@ -23,7 +23,7 @@ int main()
 	}
 	else
 	{
-		if(x%2 == 0)
+		if (x % 2 == 0)
 		{
 			printf("Negative even number\n");
 		}
@@ -33,4 +33,3 @@ int main()
 		}
 	}
 }
-
