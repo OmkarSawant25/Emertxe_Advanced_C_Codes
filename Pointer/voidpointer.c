@@ -10,6 +10,7 @@ int main()
     void *p0;
     p0 = p;
     printf("Address = %p\n", p0); //*p0 will give an error as it is not point to a particular variable
+    printf("size of void Pointer is %ld bytes\n", sizeof(*p0));
     printf("Address = %p\n", p0 + 1);
     return 0;
 }
