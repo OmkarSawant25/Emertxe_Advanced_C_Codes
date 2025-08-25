@@ -1,17 +1,17 @@
 #include <stdio.h>
 int compare(char *a, char *b)
 {
-    int flag = 0;
-    while (*a != '\0')
+    while (*a != '\0' && *b != '\0')
     {
-        if (*a == *b + 32 || *a == *b - 32 || *b == *a + 32 || *b == *a - 32 || *a == *b)
+        // if (*a == *b + 32 || *a == *b - 32 || *b == *a + 32 || *b == *a - 32 || *a == *b)
+        if(!(*a == *b || *a - *b == 32 || *b - *a == 32))
         {
-            flag = 1;
+            return 0;
         }
         a++;
         b++;
     }
-    if (flag)
+    if (*a == '\0' && *b == '\0')
         return 1;
     else
         return 0;
