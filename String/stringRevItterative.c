@@ -13,7 +13,7 @@ int length(char *str)
 void strrev(char *str, int i, int j)
 {
     char temp;
-    if (i < j)
+    while (i < j)
     {
         temp = str[i];
         str[i] = str[j];
