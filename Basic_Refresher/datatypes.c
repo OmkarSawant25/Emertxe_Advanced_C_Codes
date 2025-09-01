@@ -2,14 +2,14 @@
 
 int main()
 {
-	int x;  //declaration
+	int x; // declaration
 	x = 10;
 
-	int y = 10; //defination
-	
+	int y = 10; // defination
+
 	printf("Hello World\n");
 
-	printf("x = %d\n",x);
+	printf("x = %d\n", x);
 
-	printf("x = %d, y = %d\n",x,y);
+	printf("x = %d, y = %d\n", x, y);
 }

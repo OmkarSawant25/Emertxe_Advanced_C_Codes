@@ -1,11 +1,13 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 	int x;
 	printf("Enter the x value\n");
-	scanf("%d",&x);
+	scanf("%d", &x);
 
-	if(x>10){
+	if (x > 10)
+	{
 		printf("Hello Omkar\n");
 	}
 }

@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
 	int x = 5;
 
-	if(x=5);
+	if (x = 5)
 	{
 		printf("Hello\n");
 	}
-	else{
+	else
+	{
 		printf("world\n");
 	}
 }
-

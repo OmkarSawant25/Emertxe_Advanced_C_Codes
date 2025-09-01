@@ -1,13 +1,14 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
-	int x,y,z;
+	int x, y, z;
 	printf("Enter the numbers : \n");
-	scanf("%d %d %d",&x,&y,&z);
+	scanf("%d %d %d", &x, &y, &z);
 
-	if(x*x + y*y == z*z || y*y + z*z == x*x || z*z + x*x == y*y )
-	 {
+	if (x * x + y * y == z * z || y * y + z * z == x * x || z * z + x * x == y * y)
+	{
 		printf("Triangle is an right angled triangle\n");
 	}
 	else
@@ -15,4 +16,3 @@ int main(){
 		printf("Triangle is not an right angled triangle\n");
 	}
 }
-

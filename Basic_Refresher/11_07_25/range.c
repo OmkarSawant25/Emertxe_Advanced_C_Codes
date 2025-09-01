@@ -5,14 +5,14 @@ int main()
 
 	int num;
 	printf("Enter the value for num :\n");
-	scanf("%d",&num);
+	scanf("%d", &num);
 
-	if((num>=10) && (num<20))
+	if ((num >= 10) && (num < 20))
 	{
-		printf("%d is between the range\n",num);
+		printf("%d is between the range\n", num);
 	}
 	else
 	{
-		printf("%d is not in range\n",num);
+		printf("%d is not in range\n", num);
 	}
 }

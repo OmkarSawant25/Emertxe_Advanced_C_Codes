@@ -2,12 +2,12 @@
 
 int main()
 {
-	for(int i = 1 ; i<=5 ; i++)
+	for (int i = 1; i <= 5; i++)
 	{
-		if(i == 4){
+		if (i == 4)
+		{
 			continue;
 		}
-		printf("%d ",i);
+		printf("%d ", i);
 	}
 }
-

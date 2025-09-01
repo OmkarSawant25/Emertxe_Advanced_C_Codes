@@ -2,16 +2,15 @@
 
 int main()
 {
-	int start,diff,terms;
+	int start, diff, terms;
 	printf("Enter the start, diff, no. of terms : ");
-	scanf("%d %d %d",&start,&diff,&terms);
+	scanf("%d %d %d", &start, &diff, &terms);
 	int result = start;
 
-	for(int i = start ; i <= terms ; i++ )
+	for (int i = start; i <= terms; i++)
 	{
 		printf("%d ", result);
 		result = result + diff;
 	}
 	return 0;
 }
-

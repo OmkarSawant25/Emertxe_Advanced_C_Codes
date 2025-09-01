@@ -4,19 +4,21 @@ int main()
 {
 	int x;
 	printf("Enter a number : ");
-	scanf("%d",&x);
+	scanf("%d", &x);
 
-	for(int i = 1; i <= x; i++){
-		for(int j = i; j <= x; j++){
-			if((i == 1) || (j == i) || j == x){
-				printf("%d ",j);
+	for (int i = 1; i <= x; i++)
+	{
+		for (int j = i; j <= x; j++)
+		{
+			if ((i == 1) || (j == i) || j == x)
+			{
+				printf("%d ", j);
 			}
-			else{
+			else
+			{
 				printf("  ");
 			}
 		}
 		printf("\n");
 	}
 }
-
-		

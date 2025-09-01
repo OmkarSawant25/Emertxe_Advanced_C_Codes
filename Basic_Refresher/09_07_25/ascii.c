@@ -8,5 +8,5 @@ int main()
 	char d = -133;
 	char e = -180;
 
-	printf("%hhd %hhd %hhd %hhd %hhd\n",a,b,c,d,e);
+	printf("%hhd %hhd %hhd %hhd %hhd\n", a, b, c, d, e);
 }

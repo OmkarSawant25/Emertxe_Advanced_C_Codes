@@ -1,16 +1,18 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
 	int x;
 	printf("Enter the number : \n");
-	scanf("%d",&x);
+	scanf("%d", &x);
 
-	if(x>10){
+	if (x > 10)
+	{
 		printf("Greater than 10\n");
 	}
-	else{
+	else
+	{
 		printf("Less than 10\n");
 	}
 }
-

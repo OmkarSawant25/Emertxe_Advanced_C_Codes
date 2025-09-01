@@ -4,18 +4,19 @@ int main()
 {
 	int num;
 	printf("Enter a number: ");
-	scanf("%d",&num);
+	scanf("%d", &num);
 	int count = 0;
 
-	for(int i = 2; i < num/2; i++){
-		if(num%i == 0)
+	for (int i = 2; i < num / 2; i++)
+	{
+		if (num % i == 0)
 		{
-		       count++;
-		       break;
+			count++;
+			break;
 		}
 	}
-	if(count == 0) printf("Prime number\n");
-	else printf("Not a prime number\n");
+	if (count == 0)
+		printf("Prime number\n");
+	else
+		printf("Not a prime number\n");
 }
-
-	       	       

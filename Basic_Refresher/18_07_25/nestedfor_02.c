@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 	int n;
 	printf("Enter the size : ");
-	scanf("%d",&n);
+	scanf("%d", &n);
 
-	for(int row=1;row<=n;row++){
-		for(int col=1;col<=n;col++){
+	for (int row = 1; row <= n; row++)
+	{
+		for (int col = 1; col <= n; col++)
+		{
 			printf("* ");
 		}
 		printf("\n");

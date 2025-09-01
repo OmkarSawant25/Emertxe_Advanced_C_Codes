@@ -2,9 +2,10 @@
 
 int main()
 {
-	for(int i = 1; i<=10 ;i++)
+	for (int i = 1; i <= 10; i++)
 	{
-		if(i == 4){
+		if (i == 4)
+		{
 			printf("Pen found\n");
 			break;
 		}
@@ -12,4 +13,3 @@ int main()
 	}
 	printf("Thanks\n");
 }
-
