@@ -2,7 +2,7 @@
 #include <string.h>
 int main()
 {
-    char str[50] = {"Omkar,Maharashtra,Latur"};
+    char str[50] = {"Omkar,,Maharashtra,Latur"};
     char *token;
     token = strtok(str,",");
     while(token != NULL)

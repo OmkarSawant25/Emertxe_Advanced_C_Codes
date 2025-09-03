@@ -2,7 +2,6 @@
 #include <string.h>
 
 char *my_strtok(char str[], const char delim[]);
-int length(char *a);
 
 int main()
 {
@@ -26,9 +25,6 @@ int main()
 
 char *my_strtok(char str[], const char delim[])
 {
-    // int al = length(str);
-    // int bl = length(delim);
-
     int i = 0;
     static char *start;
     if (str != NULL)
@@ -57,13 +53,4 @@ char *my_strtok(char str[], const char delim[])
     }
     start = NULL;
     return str;
-}
-int length(char *a)
-{
-    int len = 0;
-    while (*a != 0)
-    {
-        len++;
-    }
-    return len;
 }
