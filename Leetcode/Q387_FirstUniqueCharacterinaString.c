@@ -4,25 +4,35 @@
 
 int firstUniqChar(char *s)
 {
-    int count = 0;
+    int size = -1;
     int i = 0;
     while (s[i] != 0)
     {
         int j = 0;
-        count = 0;
+        int count = 0;
         while (s[j] != 0)
         {
-            if (s[i] == s[j])
+            if (j < i)
             {
-                count++;
+                if(s[i] == s[j]) break;
+            }
+            else
+            {
+                if (s[i] == s[j])
+                {
+                    count++;
+                }
             }
             j++;
         }
         if (count == 1)
-            return i;
+        {
+            size = i;
+            break;
+        }
         i++;
     }
-    return -1;
+    return size;
 }
 
 int main()
