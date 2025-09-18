@@ -10,8 +10,9 @@ int main()
     while(!feof(fp))
     {
         printf("%c",ch);
-        ch = fgetc(fp);
+        ch = fgetc(fp);    // Read character by character and print to stdout
     }
+    
     fclose(fp);
 	return 0;
 }

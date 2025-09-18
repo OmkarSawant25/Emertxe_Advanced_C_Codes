@@ -7,7 +7,7 @@ int main()
     fp = fopen("ftell.txt","r");
     while((ch = fgetc(fp)) != EOF)
     {
-        // fputc(ch,stdout);
+        // printf("%c \n", ch);
         if(ch == 'c')
         {
             printf("Position of c is : %ld \n", ftell(fp));
