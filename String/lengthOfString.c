@@ -1,6 +1,7 @@
 // ● WAP to calculate length of the string
 
 #include <stdio.h>
+#include <string.h>
 int length(char *s){
     int len = 0;
     while(*s != 0){
@@ -14,5 +15,5 @@ int main(){
     printf("Enter the character : ");
     scanf("%s", str);
     int res = length(str);
-    printf("The length of %s is %d\n",str,res);
+    printf("The length of %s is %d %ld\n",str,res, strlen("O"));
 }
