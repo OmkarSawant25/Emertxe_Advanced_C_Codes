@@ -1,46 +1,39 @@
 /*
 Name        : Omkar Ashok Sawant
-Date        : 22/09/2025
-Description : WAP to count no. of characters, words and lines, entered through stdin
-              Read characters from user till EOF
-              If EOF received, print the character count, word count, and line count.
-              Code should exactly work like wc command.
-I/O         : I -> Hello world
-                   Dennis Ritchie
-                   Linux
-              O -> Character count : 33
-                   Line count : 3
-                   Word count : 5
+Date        : 26/09/2025
+Description : WAP to count number of set bits in a given number and print parity
+I/O         : I -> Enter the number: 15
+              O -> Number of set bits = 4
+                   Bit parity is Even
 */
 
 #include <stdio.h>
 
 int main()
 {
-    int L_Count = 0;
-    int C_Count = 0;
-    int W_Count = 0;
-    char ch;
-    char prev = '\0';
-    while ((ch = getchar()) != EOF) // Running the loop untill it reaches EOF
+    int num;
+    printf("Enter the number : ");
+    scanf("%d", &num);
+    int count = 0;
+    while (num > 1)
     {
-        C_Count++;                                                  // Incrementing the character count
-        if ((ch == '\t' || ch == ' ' || ch == '\n') && prev != ' ') // if ch is space or tab or newline and also the previous should not be space
+        if (num & num - 1)
         {
-            W_Count++; // Incrementing the Word count
+            count++;
         }
-        if (ch == '\n') // If there is newline then increase the count of Length
-        {
-            L_Count++; // Incrementing the Line count
-        }
-        prev = ch; // Updating prev with ch
+        num = (num >> 1);
     }
-    if (prev != ' ' && prev != '\t' && prev != '\n')
+    if (num == 1)
     {
-        W_Count++; // Incrementing the Word count
+        count++;
     }
-    printf("Character count : %d\n", C_Count);
-    printf("Line count : %d\n", L_Count);
-    printf("Word count : %d\n", W_Count);
-    return 0;
+    printf("Number of set bits = %d\n", count);
+    if (count % 2 == 0)
+    {
+        printf("Bit parity is Even\n");
+    }
+    else
+    {
+        printf("Bit parity is Odd\n");
+    }
 }
