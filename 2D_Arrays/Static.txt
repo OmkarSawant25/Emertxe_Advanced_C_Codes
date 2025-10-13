@@ -1,0 +1,64 @@
+🔹 What Does “Static Declaration” Mean?
+
+➡️ Static declaration means the size of the array is fixed at compile time.
+Memory for the array is allocated in the stack (not dynamically at runtime).
+
+You cannot change its size during program execution.
+
+🔹 Syntax
+data_type array_name[rows][columns];
+
+Example:
+int a[3][4];
+
+
+This means:
+
+a is a 2D array with 3 rows and 4 columns.
+
+Total elements = 3 × 4 = 12.
+
+Each element is of type int.
+
+🔹 Initialization Methods
+✅ (1) Full Initialization
+int a[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+✅ (2) Partial Initialization
+
+If you give fewer values, remaining elements become 0 automatically.
+
+int a[2][3] = {1, 2, 3};
+
+
+➡️ Means:
+
+a[0][0]=1  a[0][1]=2  a[0][2]=3
+a[1][0]=0  a[1][1]=0  a[1][2]=0
+
+✅ (3) Compiler Counted Rows
+
+You can skip row size if values are known:
+
+int a[][3] = {
+    {10, 20, 30},
+    {40, 50, 60}
+};
+
+
+➡️ Compiler automatically counts 2 rows.
+
+🔹 Accessing Elements
+
+You can access or modify any element using:
+
+a[row_index][column_index]
+
+
+Example:
+
+a[1][2] = 99;       // modifies element in 2nd row, 3rd column
+printf("%d", a[0][1]);  // prints element in 1st row, 2nd column

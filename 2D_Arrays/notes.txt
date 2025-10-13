@@ -1,0 +1,18 @@
+1. Static Declaration of 2D Array
+  🔹 Key Points to Remember
+    ✅ Size fixed at compile time
+    ✅ Stored in stack memory
+    ✅ Faster access than dynamic arrays
+    ✅ Can be partially initialized
+    ✅ Stored in row-major order
+
+2. Dynamic 2D Arrays in C -> Array of Pointers (Row-wise Allocation)
+  🔹 Key Points to Remember
+    ✅ Each row is a separate array, pointed to by an array of pointers.
+    ✅ Memory: Heap (allocated with malloc)
+    ✅ Access: arr[i][j] (easy and natural syntax)
+    ✅ Dynamic Size: Both rows and columns can be determined at runtime.
+    ✅ Memory Layout: Rows can be non-contiguous.
+    ✅ Free Memory: Must free each row, then the array of pointers.
+    ✅ Pros: Easy syntax, flexible, supports jagged arrays (different row lengths)
+    ✅ Cons: Slightly slower than contiguous memory for large arrays

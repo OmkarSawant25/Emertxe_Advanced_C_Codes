@@ -1,0 +1,99 @@
+🟢 Dynamic 2D Array using Array of Pointers (Row-wise Allocation)
+🔹 What Does “Dynamic Array using Array of Pointers” Mean?
+
+➡️ Dynamic array means the number of rows and columns can be decided at runtime.
+Memory for the array is allocated on the heap using malloc().
+
+Each row is a separate 1D array, and all rows are pointed to by an array of pointers.
+You can access elements using the familiar syntax arr[i][j].
+
+🔹 Steps to Create a Fully Dynamic 2D Array
+
+Decide rows and columns at runtime:
+
+int rows, cols;
+scanf("%d %d", &rows, &cols);
+
+
+Allocate array of row pointers:
+
+int **arr = (int**) malloc(rows * sizeof(int*));
+
+
+Allocate memory for each row individually:
+
+for(int i = 0; i < rows; i++)
+    arr[i] = (int*) malloc(cols * sizeof(int));
+
+
+Access or modify elements using:
+
+arr[i][j] = value;
+
+
+Free memory after use:
+
+for(int i = 0; i < rows; i++)
+    free(arr[i]);
+free(arr);
+
+🔹 Example Program
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int rows, cols;
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    int **arr = (int**) malloc(rows * sizeof(int*));
+
+    for(int i = 0; i < rows; i++)
+        arr[i] = (int*) malloc(cols * sizeof(int));
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < cols; j++)
+            scanf("%d", &arr[i][j]);
+
+    printf("Matrix:\n");
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+
+    for(int i = 0; i < rows; i++)
+        free(arr[i]);
+    free(arr);
+
+    return 0;
+}
+
+🔹 How Memory is Organized
+
+If rows = 2 and cols = 3:
+
+arr → [row0 pointer] [row1 pointer]
+
+row0 → [0][0] [0][1] [0][2]
+row1 → [1][0] [1][1] [1][2]
+
+
+➡ Each row can be anywhere in memory, but you access elements naturally with arr[i][j].
+
+🔹 Advantages
+
+✅ Easy to use with arr[i][j]
+✅ Fully dynamic — rows and columns can change at runtime
+✅ Flexible for matrices of varying sizes or jagged arrays
+
+🔹 Real-Life Uses
+
+Dynamic images or grids (user-defined size)
+
+Game boards (Tic-tac-toe, Sudoku)
+
+Storing dynamic tables from file input
+
+Graph adjacency matrices for variable-sized graphs
