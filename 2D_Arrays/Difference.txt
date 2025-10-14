@@ -1,0 +1,9 @@
+| Feature                | Pointer to Array       | Array of Pointers             |
+| ---------------------- | ---------------------- | ----------------------------- |
+| Memory Layout          | Contiguous rows        | Rows can be scattered         |
+| Dynamic Row Size       | Fixed (per allocation) | Flexible, can vary            |
+| Syntax for Access      | `p[i][j]`              | `arr[i][j]`                   |
+| Cache Performance      | Better                 | Slightly worse                |
+| Supports Jagged Arrays | No                     | Yes                           |
+| Memory Allocation      | Single block           | Row-by-row + pointer array    |
+| Freeing Memory         | Single `free()`        | Free each row + pointer array |

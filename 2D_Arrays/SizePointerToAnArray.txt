@@ -1,0 +1,51 @@
+1️⃣ Declaration
+int (*p)[4];
+p → pointer to an array of 4 integers.
+
+Important: p itself is a pointer, not the array.
+
+2️⃣ Size of p
+The size of a pointer in C depends on the system architecture (32-bit or 64-bit), not on what it points to.
+Typical sizes:
+32-bit system → 4 bytes
+64-bit system → 8 bytes
+
+printf("%zu\n", sizeof(p)); // size of pointer itself
+
+✅ Output on 64-bit system: 8
+✅ Output on 32-bit system: 4
+
+3️⃣ Size of the array it points to
+*p → the array itself (int[4])
+sizeof(*p) → size of the entire array:
+printf("%zu\n", sizeof(*p)); // size of array of 4 ints
+
+If sizeof(int) = 4 bytes:
+sizeof(*p) = 4 * 4 = 16 bytes
+
+sizeof(p) ≠ sizeof(*p)!
+
+🔹 Example Code
+#include <stdio.h>
+
+int main() {
+    int (*p)[4];
+    int arr[3][4];
+    p = arr; // pointer to first row
+
+    printf("Size of p (pointer): %zu bytes\n", sizeof(p));
+    printf("Size of *p (row of 4 ints): %zu bytes\n", sizeof(*p));
+
+    return 0;
+}
+
+Sample Output on 64-bit machine:
+
+Size of p (pointer): 8 bytes
+Size of *p (row of 4 ints): 16 bytes
+
+🔹 Key Points
+p → pointer → size depends on system (4 or 8 bytes).
+*p → the row (int[4]) → size = 4 × sizeof(int) = 16 bytes (on 4-byte int system).
+
+This distinction is very important when working with pointer arithmetic or dynamic memory.

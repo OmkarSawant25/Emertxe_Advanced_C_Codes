@@ -16,3 +16,108 @@
     ✅ Free Memory: Must free each row, then the array of pointers.
     ✅ Pros: Easy syntax, flexible, supports jagged arrays (different row lengths)
     ✅ Cons: Slightly slower than contiguous memory for large arrays
+
+3. Pointer to an Array (Contiguous Row-wise Allocation)
+  🔹 Key Points to Remember
+    ✅ Pointer points to a whole row (or array).
+    ✅ Memory can be allocated statically or dynamically.
+    ✅ Access: p[i][j] (same as normal 2D array).
+    ✅ Pointer arithmetic: p + 1 moves to next row.
+    ✅ Memory Layout: Rows are contiguous (especially for static arrays).
+    ✅ Dynamic Allocation: Allocate rows × sizeof(row) in one block.
+    ✅ Pros: Good cache performance, simple arithmetic, contiguous memory.
+    ✅ Cons: Less flexible for jagged arrays (all rows must have same size).
+
+4. Array of Pointers (Dynamic, Row-wise Allocation, Jagged Arrays)
+  🔹 Key Points to Remember
+    ✅ Each row is a separate array, pointed to by an array of pointers.
+    ✅ Memory: Heap (allocated with malloc).
+    ✅ Access: arr[i][j] (same syntax as normal 2D array).
+    ✅ Dynamic Size: Both rows and columns can vary at runtime.
+    ✅ Memory Layout: Rows can be non-contiguous.
+    ✅ Free Memory: Must free each row, then the array of pointers.
+    ✅ Pros: Flexible, supports jagged arrays (different row lengths).
+    ✅ Cons: Slightly slower than contiguous memory for large arrays due to pointer indirection.
+
+-------------------------------------------------------------------------------------------------------
+1️⃣ Static Declaration of 2D Array
+-------------------------------------------------------------------------------------------------------
+
+🔹 Key Points to Remember
+
+✅ Size fixed at compile time
+✅ Stored in stack memory
+✅ Faster access than dynamic arrays
+✅ Can be partially initialized
+✅ Stored in row-major order
+✅ Contiguous memory (good for cache performance)
+
+Example:
+
+int arr[3][4] = {
+    {1,2,3,4},
+    {5,6,7,8},
+    {9,10,11,12}
+};
+
+printf("%d", arr[1][2]); // Access 2nd row, 3rd column
+
+-------------------------------------------------------------------------------------------------------
+2️⃣ Dynamic 2D Array – Pointer to Array (Contiguous Row-wise Allocation)
+-------------------------------------------------------------------------------------------------------
+
+🔹 Key Points to Remember
+
+✅ Pointer points to whole row
+✅ Memory: Heap, allocated in a single block
+✅ Access: p[i][j] (same syntax as normal 2D array)
+✅ Pointer arithmetic: p + 1 moves to next row
+✅ Rows are contiguous
+✅ Pros: Good cache performance, simple arithmetic
+✅ Cons: Less flexible (all rows must have same size)
+
+Example:
+
+int (*p)[4];               // pointer to row of 4 ints
+p = malloc(sizeof(*p) * 3);  // allocate 3 rows dynamically
+p[1][2] = 10;               // access 2nd row, 3rd column
+free(p);                     // free memory
+
+-------------------------------------------------------------------------------------------------------
+3️⃣ Dynamic 2D Array – Array of Pointers (Row-wise Allocation / Jagged Arrays)
+-------------------------------------------------------------------------------------------------------
+
+🔹 Key Points to Remember
+
+✅ Each row is a separate array, pointed to by an array of pointers
+✅ Memory: Heap, allocated row by row
+✅ Access: arr[i][j] (same syntax as normal 2D array)
+✅ Dynamic size: rows and columns can be determined at runtime
+✅ Rows can be non-contiguous
+✅ Free memory: free each row, then free the array of pointers
+✅ Pros: Flexible, supports jagged arrays (different row lengths)
+✅ Cons: Slightly slower than contiguous memory for large arrays
+
+Example:
+
+int *arr[3];                 // array of 3 int pointers
+for(int i=0; i<3; i++)
+    arr[i] = malloc(sizeof(int) * (i+2)); // each row can have different length
+
+arr[1][2] = 10;              // access element in 2nd row, 3rd column
+
+// Free memory
+for(int i=0; i<3; i++)
+    free(arr[i]);
+
+✅ Quick Comparison Table
+| Feature                | Static 2D Array | Pointer to Array (Dynamic) | Array of Pointers (Dynamic)       |
+| ---------------------- | --------------- | -------------------------- | --------------------------------- |
+| Memory Allocation      | Stack           | Heap (single block)        | Heap (row by row + pointer array) |
+| Contiguous Memory      | Yes             | Yes                        | No (rows may be scattered)        |
+| Row Size               | Fixed           | Fixed per allocation       | Flexible / can vary               |
+| Access Syntax          | `arr[i][j]`     | `p[i][j]`                  | `arr[i][j]`                       |
+| Supports Jagged Arrays | No              | No                         | Yes                               |
+| Free Memory            | N/A             | Single `free()`            | Free each row + pointer array     |
+| Pros                   | Fast, simple    | Contiguous, cache-friendly | Flexible, supports jagged arrays  |
+| Cons                   | Size fixed      | Less flexible              | Slightly slower, more management  |
