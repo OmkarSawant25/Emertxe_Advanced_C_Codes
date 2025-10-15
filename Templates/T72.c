@@ -1,3 +1,16 @@
+/*
+Sum of variable numbers using variadic function
+Template - Sum of variable numbers using variadic function
+Eg: 
+    result = sum(4, 10, 20, 30, 40);
+    result = sum(5, 10, 20, 30, 40, 50);
+    result = sum(3, 15, 12, 13);
+    Print the results of above function call
+Output: Result = 100
+        Result = 150
+        Result = 40
+*/
+
 #include <stdio.h>
 #include <stdarg.h>
 

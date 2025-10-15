@@ -16,3 +16,25 @@ int main() {
     free(p);
     return 0;
 }
+
+/*
+🔹 How It Works
+
+p = arr;
+The 2D array decays into a pointer to its first row.
+First row = arr[0] (an array of 4 ints).
+
+p[i][j]
+p + i → move to i-th row
+p[i] → pointer to the i-th row
+p[i][j] → j-th element in i-th row
+
+Pointer arithmetic:
+p + 1 → jumps one whole row (4 ints), not just one int.
+
+🔹 Key Points
+
+    Use int (*p)[cols] when working with 2D arrays.
+    Makes dynamic 2D array allocation easier.
+    p[i][j] works exactly like a normal 2D array.
+    Pointer moves row by row, element access works column by column.*/

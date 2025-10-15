@@ -5,7 +5,7 @@ int main() {
     int (*p)[3];  // pointer to an array of 3 ints
 
     // Allocate memory for 3 arrays of 3 ints each
-    p = malloc(sizeof(*p) * 3);  
+    p = (int (*)[])malloc(sizeof(*p) * 3);  
 
     // Assign values
     (*(p + 0))[0] = 1;  // 1st row, 1st column
@@ -66,12 +66,13 @@ void print_2D(int (*p)[3], int rows) {
 
 Works perfectly with dynamically allocated 2D arrays.
 You don’t lose row size information (unlike int **p sometimes).
-
+----------------------------------------------------------------------------------------------
 🔹 Summary
-Concept	            Normal Pointer	    Pointer to Array
-Declaration	        int *p	            int (*p)[3]
-Points to	        1 element	        Entire row
-Arithmetic(p + 1)	moves 1 element	    moves 1 row
-Useful for	        1D arrays	        Dynamic 2D arrays, functions with fixed row size
+----------------------------------------------------------------------------------------------
+    Concept	            Normal Pointer	    Pointer to Array
+    Declaration	        int *p	            int (*p)[3]
+    Points to	        1 element	        Entire row
+    Arithmetic(p + 1)	moves 1 element	    moves 1 row
+    Useful for	        1D arrays	        Dynamic 2D arrays, functions with fixed row size
 
 */
