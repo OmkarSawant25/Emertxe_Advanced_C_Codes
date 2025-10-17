@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "T71.C": "cpp"
+        "T71.C": "cpp",
+        "NWE.C": "cpp"
     }
 }
