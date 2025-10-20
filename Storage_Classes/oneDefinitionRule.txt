@@ -1,0 +1,52 @@
+⚡ One Definition Rule (C Variables)
+
+Only one actual definition is allowed for a global variable across your program.
+A definition allocates memory.
+
+Example:
+int x = 10;  // definition
+-----------------------------------
+Tentative definitions:
+-----------------------------------
+
+int x; at global scope without extern or initializer is a tentative definition.
+Compiler treats it as “maybe I’ll define it later.”
+During linking:
+If there’s at least one real definition, tentative ones are ignored.
+If there’s no real definition, one tentative becomes the actual definition with value 0.
+
+Example:
+
+int x;   // tentative definition → becomes definition with value 0 if no other
+
+-----------------------------------
+Extern declarations:
+-----------------------------------
+
+Just tells the compiler “this variable exists somewhere else.”
+Does not allocate memory.
+
+Example:
+
+extern int x;  // declaration only
+
+
+Rules/Errors:
+
+✅ OK: 1 real definition + any number of extern declarations.
+
+❌ Error: More than 1 real definition.
+
+❌ Error: No definition at all (all extern, no memory allocated).
+
+🔹 Super Short Version
+
+One definition rule: Only 1 real definition of a global variable in the whole program.
+
+Tentative definitions (int x;) are okay → if no other definition, first one becomes 0.
+
+Multiple real definitions → compilation error.
+
+No definitions at all → compilation error.
+
+Extern = declaration only, doesn’t count as definition.

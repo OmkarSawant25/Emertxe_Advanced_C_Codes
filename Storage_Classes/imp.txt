@@ -1,0 +1,123 @@
+⚡ Quick Tip for MCQs
+
+extern int x; → ❌ definition (just declaration)
+int x; outside function → ✅ definition (allocates memory, initialized to 0)
+static int x; inside function → ✅ definition (static local variable, lifetime = program)
+
+| Term        | Purpose                                          | Memory allocated? | Example           |
+| ----------- | ------------------------------------------------ | ----------------- | ----------------- |
+| Declaration | Tells compiler “this exists somewhere”           | ❌ No              | `extern int num;` |
+| Definition  | Actually creates/allocates the variable/function | ✅ Yes             | `int num = 10;`   |
+
+
+Absolutely! Let’s make a **super compact, MCQ-ready cheat sheet** based on everything you’ve learned so far:
+
+-------------------------------------------------------------------
+# ⚡ Quick Tips for Storage Classes & Variables (MCQ Ready)
+-------------------------------------------------------------------
+
+## 1️⃣ `auto` (default local variable)
+
+* **Scope:** Local to function/block
+* **Lifetime:** Created/destroyed each call (stack)
+* **Default value:** Garbage (uninitialized)
+* **Keyword optional:** `int x;` = `auto int x;`
+* **MCQ Tip:** Forgetting initialization → garbage value
+
+---
+
+## 2️⃣ `register`
+
+* **Scope:** Local to function
+* **Lifetime:** Only during function call
+* **Stored in:** CPU register (fast)
+* **Cannot take address:** `&x` ❌
+* **Cannot be global** ❌
+* **MCQ Tip:** If `register` used globally → compilation error
+
+---
+
+## 3️⃣ `static`
+
+### a) Static local
+
+* **Scope:** Local to function
+* **Lifetime:** Entire program
+* **Memory:** Data segment
+* **Default value:** 0
+* **Preserves value between calls** ✅
+* **Safe to return address** ✅
+
+**Example:**
+
+```c
+static int i = 0; // local
+```
+
+### b) Static global
+
+* **Scope:** File only
+* **Lifetime:** Entire program
+* **Default value:** 0
+* **Cannot be accessed by extern in other files**
+
+**MCQ Tip:** `static` = permanent + hidden
+
+---
+
+## 4️⃣ `extern`
+
+* **Scope:** Access global defined elsewhere
+* **Lifetime:** Depends on actual definition
+* **Memory:** Not allocated in declaration
+* **MCQ Tip:** Declaration only, no memory allocated.
+* **Must be defined exactly once** somewhere.
+
+---
+
+## 5️⃣ Global variables
+
+* **Scope:** Entire file (or project if extern)
+* **Lifetime:** Entire program
+* **Memory:** Data segment
+* **Default value:** 0
+* **MCQ Tip:** Can be accessed in functions; static global = file-only
+
+---
+
+## 6️⃣ Function vs variable `static`
+
+* `static` function → visible **only inside file**
+* `static` local variable → persists **between calls**
+
+---
+
+## 7️⃣ Initialization Rules
+
+| Case                    | Allowed?        | Notes                                             |
+| ----------------------- | --------------- | ------------------------------------------------- |
+| `static int x = 5;`     | ✅               | Compile-time constant or literal                  |
+| `static int x = foo();` | ❌ in standard C | Function calls not allowed for static/global init |
+| `int *p = &static_var;` | ✅ safe          | Static persists after function ends               |
+| `int *p = &auto_var;`   | ❌ dangerous     | Auto variable destroyed → dangling pointer        |
+
+---
+
+## 8️⃣ Recursive + static tips
+
+* Static variable in recursion **retains value across calls**
+* `main()` recursion:
+
+  * Without `return` → all calls print static value
+  * With `return` → only deepest call prints
+
+---
+
+## 9️⃣ Default values
+
+| Storage       | Default Value if not initialized |
+| ------------- | -------------------------------- |
+| auto/register | Garbage                          |
+| static/global | 0                                |
+
+
