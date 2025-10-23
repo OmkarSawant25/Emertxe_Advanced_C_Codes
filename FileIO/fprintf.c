@@ -6,7 +6,7 @@ int main()
 {
     FILE *fp;
     fp = fopen("f1.txt", "w");
-    int a = 10, b = 5;
+    int a = 10, b = 15;
     fprintf(fp,"sum of %d & %d is %d\n", a,b,a+b);
     fclose(fp);
 	return 0;
