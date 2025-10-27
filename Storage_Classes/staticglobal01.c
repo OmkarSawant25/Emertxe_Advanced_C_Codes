@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int x = 5;
+int x;
 int x;
 int foo()
 {

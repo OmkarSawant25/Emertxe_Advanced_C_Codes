@@ -1,4 +1,6 @@
 #include <stdio.h>
+// int x;
+int x = 5;
 int main()
 {
     int x;
@@ -15,4 +17,4 @@ int main()
     return 0;
 }
 // static int x = 20; // GIVES ERROR DUE TO LINKAGE
-int x = 20;
+// int x = 20;

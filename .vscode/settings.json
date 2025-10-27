@@ -2,6 +2,7 @@
     "files.associations": {
         "stdio.h": "c",
         "T71.C": "cpp",
-        "NWE.C": "cpp"
+        "NWE.C": "cpp",
+        "stdlib.h": "c"
     }
 }
