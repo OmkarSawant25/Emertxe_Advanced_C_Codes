@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int alternatingSum(int* nums, int numsSize) {
+    int sum = 0;
+    for(int i = 0; i < numsSize; i++) {
+        if(i % 2 == 0)
+            sum += nums[i];
+        else
+            sum -= nums[i];
+    }
+    return sum;
+}
+
+int main() {
+    int nums[] = {5, 3, 8, 2};
+    int numsSize = sizeof(nums) / sizeof(nums[0]);
+
+    int result = alternatingSum(nums, numsSize);
+
+    printf("Alternating Sum = %d\n", result);
+
+    return 0;
+}
